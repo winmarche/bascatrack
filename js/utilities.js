@@ -29,6 +29,9 @@
 	current year, without having to manually change it each year
 	and without the need of PHP.*/
 
+/*showDuration() function:
+	Function for showing the maximum duration. This function
+	does not currently work*/
 function showDuration()
 {
 	var maxDuration = document.getElementById("maxDuration");
@@ -36,14 +39,23 @@ function showDuration()
 	duration.innerHTML = "asd";
 }
 
+/*add() function:
+	Function for incrementing the value for the number of calls
+	under or over the maximum duration and calls the calculate()
+	function*/
 function add(source)
 {
 	var val = document.getElementById(source);
 	
 	val.value++;
+
 	calculate();
 }
 
+/*minus() function:
+	Function for decrementing the value for the number of calls
+	under or over the maximum duration and calls the calculate()
+	function*/
 function minus(source)
 {
 	var val = document.getElementById(source);
@@ -52,9 +64,13 @@ function minus(source)
 	{
 		val.value--;
 	}
+
 	calculate();
 }
 
+/*reset() function:
+	Function for clearing all input made by the agent and hiding
+	the results*/
 function reset()
 {
 	var percentReq = document.getElementById("percentReq");
@@ -68,8 +84,16 @@ function reset()
 	underVal.value = "0";
 	overVal.value = "0";
 	percentage.value = "-";
+
+	$("#pass").hide();
+	$("#fail").hide();
 }
 
+/*calculate() function:
+	Function for calculating the number of calls the agent has under
+	or over the maximum duration they should have on their calls and
+	show the percentage result of their progress and calls the result()
+	function to display if the agent has met their performance target*/
 function calculate()
 {
 	var underVal = document.getElementById("underVal");
@@ -78,23 +102,48 @@ function calculate()
 
 	percentage.value = parseFloat(parseInt(underVal.value) / (parseInt(underVal.value) + parseInt(overVal.value)) * 100).toFixed(2) + "%";
 
+	//Hides results and shows '-' if there is no percentage value
 	if(percentage.value == "NaN%")
 	{
 		percentage.value = "-";
+		$("#pass").hide();
+		$("#fail").hide();
 	}
+
+	result();
 }
 
+/*result() function:
+	Function for displaying whether the agent have met the performance
+	target based on the target they've entered in percentage. This
+	will then compare the current agent's performance and compare it
+	with the target performance and determine if the agent has met it
+	or not. The text for passing and failing will either be shown or
+	hidden, based on their result.*/
 function result()
 {
 	var percentage = document.getElementById("percentage");
 	var percentReq = document.getElementById("percentReq");
 
-	if(percentage.value >= percentReq.value)
+	if(percentReq && parseInt(percentage.value) >= parseInt(percentReq.value))
 	{
-		
+		$("#fail").hide();
+		$("#pass").show();
+	}
+	else if(percentReq && parseInt(percentage.value) < parseInt(percentReq.value))
+	{
+		$("#pass").hide();
+		$("#fail").show();		
+	}
+	else
+	{
+		$("#pass").hide();
+		$("#fail").hide();		
 	}
 }
 
+/*showYear() function:
+	Function for displaying current year*/
 function showYear()
 {
 	document.write(new Date().getFullYear());

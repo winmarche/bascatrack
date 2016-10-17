@@ -3,9 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bascatrack - Basic Call Tracker</title>
-		<meta name="description" content="Bacatrack">
+		<meta name="description" content="Bascatrack - Basic Call Tracker">
+		<meta name="keywords" content="winmarche,winston,mark,cheng,bascatrack,basic,call,tracker,helpdesk,customer,service,calls,stats">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 		<script type="text/javascript" src="js/utilities.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
+		<noscript>Please turn JavaScript on or use a JavaScript compatible web browser for this website to work!</noscript>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 
@@ -15,7 +18,7 @@
 		</header>
 
 		<div id="content">
-			<input type="text" id="percentReq" maxlength="3" placeholder="Feature Coming Soon!"><span>%</span>
+			<input type="text" id="percentReq" maxlength="3" placeholder="Enter Performance Target In Percentage" onblur="result()"><span>%</span>
 			<input type="text" id="maxDuration" placeholder="Feature Coming Soon!" onblur="showDuration()">
 
 			<h3>Under <span class="duration"></span></h3>
@@ -25,8 +28,8 @@
 
 			<input type="text" id="percentage" value="-" readonly="readonly">
 
-			<p id="pass" hidden=""></p>
-			<p id="fail" ></p>
+			<p id="pass" hidden>Passed</p>
+			<p id="fail" hidden>Failed</p>
 
 			<h3>Over <span class="duration"></span></h3>
 			<input type="text" id="overVal" value="0" readonly="readonly">
