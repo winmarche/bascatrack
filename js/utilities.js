@@ -86,7 +86,13 @@ function calculate()
 
 function result()
 {
+	var percentage = document.getElementById("percentage");
+	var percentReq = document.getElementById("percentReq");
 
+	if(percentage.value >= percentReq.value)
+	{
+		
+	}
 }
 
 function showYear()

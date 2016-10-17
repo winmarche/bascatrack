@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript" src="js/utilities.js"></script>
 		<meta charset="utf-8">
-		<title>Bacatrack</title>
+		<title>Bascatrack - Basic Call Tracker</title>
 		<meta name="description" content="Bacatrack">
+		<script type="text/javascript" src="js/utilities.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 
 	<body>
 		<header>
-			<h1>Bacatrack</h1>
+			<h1>Bascatrack</h1>
 		</header>
 
 		<div id="content">
-			<input type="text" id="percentReq" maxlength="3"><span>%</span>
-			<input type="text" id="maxDuration" onblur="showDuration()">
+			<input type="text" id="percentReq" maxlength="3" placeholder="Feature Coming Soon!"><span>%</span>
+			<input type="text" id="maxDuration" placeholder="Feature Coming Soon!" onblur="showDuration()">
 
 			<h3>Under <span class="duration"></span></h3>
 			<input type="text" id="underVal" value="0" readonly="readonly">
@@ -23,6 +24,9 @@
 			<button type="button" class="opButton" id="minusUnder" onclick="minus('underVal')">-</button>
 
 			<input type="text" id="percentage" value="-" readonly="readonly">
+
+			<p id="pass" hidden=""></p>
+			<p id="fail" ></p>
 
 			<h3>Over <span class="duration"></span></h3>
 			<input type="text" id="overVal" value="0" readonly="readonly">
