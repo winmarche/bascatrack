@@ -1,0 +1,62 @@
+html
+{
+	font-family: Source Sans Pro;
+}
+
+input
+{
+	font-family: Source Sans Pro;
+}
+
+button
+{
+	border-style: none;
+	background-color: black;
+	color: white;
+	font-family: Source Sans Pro;
+	transition: 0.2;
+}
+
+button:hover
+{
+	background-color: darkgrey;
+}
+
+button:active
+{
+	background-color: grey;
+}
+
+#req, #clear, footer
+{
+	clear: both;
+}
+
+#req
+{
+	/*width: 100%;*/
+}
+
+#under, #results, #over
+{
+	float: left;
+	width: 8em;
+}
+
+#percentReq, #maxDuration
+{
+	width: 4em;
+}
+
+#underVal, #overVal
+{
+	border-style: none;
+	width: 2em;
+	text-align: center;
+}
+
+#percentage
+{
+	border-style: none;
+	width: 6em;
+}

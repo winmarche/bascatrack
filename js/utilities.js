@@ -30,13 +30,18 @@
 	and without the need of PHP.*/
 
 /*showDuration() function:
-	Function for showing the maximum duration. This function
-	does not currently work*/
+	Function for showing the maximum duration accepted on a call*/
 function showDuration()
 {
 	var maxDuration = document.getElementById("maxDuration");
-	var duration = document.getElementByClassName("duration");
-	duration.innerHTML = "asd";
+	if(maxDuration.value && !isNaN(maxDuration.value))
+	{
+		$(".duration").html(maxDuration.value + " mins");
+	}
+	else
+	{
+		$(".duration").html("");
+	}
 }
 
 /*add() function:
@@ -87,6 +92,7 @@ function reset()
 
 	$("#pass").hide();
 	$("#fail").hide();
+	//$("body").css("background: white;");
 }
 
 /*calculate() function:
