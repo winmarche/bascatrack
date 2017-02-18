@@ -23,28 +23,29 @@
 				<input type="text" id="percentReq" maxlength="3" placeholder="Target" onblur="result()"><span>%</span>
 				<input type="text" id="maxDuration" placeholder="Duration" onblur="showDuration()">
 			</div>
+			<div id="statspanel">
+				<div id="under">
+					<h3>Under <span class="duration"></span></h3>
+					<button type="button" class="opButton" id="addUnder" onclick="add('underVal')">+</button>
+					<input type="text" id="underVal" value="0" readonly="readonly">
+					<button type="button" class="opButton" id="minusUnder" onclick="minus('underVal')">-</button>
+				</div>
 
-			<div id="under">
-				<h3>Under <span class="duration"></span></h3>
-				<button type="button" class="opButton" id="addUnder" onclick="add('underVal')">+</button>
-				<input type="text" id="underVal" value="0" readonly="readonly">
-				<button type="button" class="opButton" id="minusUnder" onclick="minus('underVal')">-</button>
-			</div>
+				<div id="results">
+					<h3>Results</h3>
 
-			<div id="results">
-				<h3>Results</h3>
+					<input type="text" id="percentage" value="-" readonly="readonly">
 
-				<input type="text" id="percentage" value="-" readonly="readonly">
+					<p id="pass" hidden>Passed</p>
+					<p id="fail" hidden>Failed</p>
+				</div>
 
-				<p id="pass" hidden>Passed</p>
-				<p id="fail" hidden>Failed</p>
-			</div>
-
-			<div id="over">
-				<h3>Over <span class="duration"></span></h3>
-				<button type="button" class="opButton" id="addOver" onclick="add('overVal')">+</button>
-				<input type="text" id="overVal" value="0" readonly="readonly">
-				<button type="button" class="opButton" id="minusOver" onclick="minus('overVal')">-</button>
+				<div id="over">
+					<h3>Over <span class="duration"></span></h3>
+					<button type="button" class="opButton" id="addOver" onclick="add('overVal')">+</button>
+					<input type="text" id="overVal" value="0" readonly="readonly">
+					<button type="button" class="opButton" id="minusOver" onclick="minus('overVal')">-</button>
+				</div>
 			</div>
 
 			<dir id="clear">

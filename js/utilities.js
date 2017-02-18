@@ -92,7 +92,7 @@ function reset()
 
 	$("#pass").hide();
 	$("#fail").hide();
-	//$("body").css("background: white;");
+	$("html").css({"background-color":"initial"});
 }
 
 /*calculate() function:
@@ -124,8 +124,8 @@ function calculate()
 	target based on the target they've entered in percentage. This
 	will then compare the current agent's performance and compare it
 	with the target performance and determine if the agent has met it
-	or not. The text for passing and failing will either be shown or
-	hidden, based on their result.*/
+	or not. The text and background for passing and failing will either
+	be shown or hidden, based on their result.*/
 function result()
 {
 	var percentage = document.getElementById("percentage");
@@ -135,16 +135,19 @@ function result()
 	{
 		$("#fail").hide();
 		$("#pass").show();
+		$("html").css({"background-color":"lightgreen"});
 	}
 	else if(percentReq && parseInt(percentage.value) < parseInt(percentReq.value))
 	{
 		$("#pass").hide();
-		$("#fail").show();		
+		$("#fail").show();
+		$("html").css({"background-color":"#FF6347"});
 	}
 	else
 	{
 		$("#pass").hide();
-		$("#fail").hide();		
+		$("#fail").hide();
+		$("html").css({"background-color":"initial"});
 	}
 }
 

@@ -3,9 +3,16 @@ html
 	font-family: Source Sans Pro;
 }
 
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
 input
 {
 	font-family: Source Sans Pro;
+	font-size: 1em;
 }
 
 button
@@ -14,7 +21,13 @@ button
 	background-color: black;
 	color: white;
 	font-family: Source Sans Pro;
-	transition: 0.2;
+	transition: 0.25s;
+}
+
+body
+{
+	height: 100%;
+	padding-left: 2em;
 }
 
 button:hover
@@ -27,20 +40,21 @@ button:active
 	background-color: grey;
 }
 
+
 #req, #clear, footer
 {
 	clear: both;
-}
-
-#req
-{
-	/*width: 100%;*/
 }
 
 #under, #results, #over
 {
 	float: left;
 	width: 8em;
+}
+
+#maxDuration
+{
+	margin-left: 1.5em;
 }
 
 #percentReq, #maxDuration
@@ -53,10 +67,19 @@ button:active
 	border-style: none;
 	width: 2em;
 	text-align: center;
+	font-size: 1em;
+	background-color: transparent;
 }
 
 #percentage
 {
 	border-style: none;
 	width: 6em;
+	font-size: 1em;
+	background-color: transparent;
+}
+
+footer
+{
+	font-size: 1.2em;
 }
